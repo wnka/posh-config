@@ -60,18 +60,21 @@
           }
         },
         {
-          "type": "git",
+          "foreground": "#000000",
+          "background": "#FCA17D",
+          "leading_diamond": "\ue0b2",
+          "trailing_diamond": "\ue0b0",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "#ffffff",
-          "background": "#FCA17D",
-          "template": " \u279c ({{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}) ",
-          "properties": {
-            "branch_icon": "",
-            "fetch_stash_count": true,
-            "fetch_status": false,
-            "fetch_upstream_icon": true
-          }
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }} ",
+          "type": "git"
         },
         {
           "type": "node",
