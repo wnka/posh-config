@@ -46,7 +46,7 @@
           "foreground": "#ffffff",
           "background": "#9A348E",
           "leading_diamond": "\ue0b6",
-          "template": "{{ if .SSHSession }}\uf817 {{ end }} \u2800"
+          "template": "{{ if .SSHSession }}\ueba9 {{ end }} \u2800"
         },
         {
           "type": "path",
